@@ -1,0 +1,4 @@
+def onOffToOn(channel, sampleIndex, val, prev):
+	op('cuelist')[op('standby_cue')[0,0], 3] = 1
+	op('standby_cue')[0,0] = op('standby_cue')[0,0]  + 1
+	return
