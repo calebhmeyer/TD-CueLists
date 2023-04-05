@@ -1,0 +1,14 @@
+cuelist = op('/project1/container1/cuelist')
+standby_cue_op = op('/project1/standby_cue')
+follow_words = ['follow', 'f', 'F', 'flw', 'fllow', 'follw', 'fllw'] 
+def onOffToOn(channel, sampleIndex, val, prev):
+	standby_cue = op('/project1/standby_cue')[0,0]
+
+	try:
+		if cuelist[standby_cue, 1].val.lower() in follow_words:
+			cuelist[standby_cue, 3] = 1
+			standby_cue_op[0,0] = standby_cue_op[0,0] + 1
+	except TypeError:
+		pass
+		
+	return
