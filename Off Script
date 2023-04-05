@@ -1,0 +1,5 @@
+def onOffToOn(channel, sampleIndex, val, prev):
+	op('standby_cue')[0,0] = 1
+	for i in range(1, op('cuelist').numRows):
+		op('cuelist')[i, 3] = 0
+	return
